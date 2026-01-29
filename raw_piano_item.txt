@@ -1,0 +1,339 @@
+	upgrade_mystical_piano = 
+	{
+		_class = "base_upgrade_projectile_aoe_modifier"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = 23.000000
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "EItemCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = 1.700000
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0.2"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			StunDelay = 
+			{
+				m_strValue = 1.700000
+			}
+			StunDuration = 
+			{
+				m_strValue = 2.000000
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "stun_sf"
+				}
+				m_subclassScale2Function = subclass:
+                {
+                    _class = "scale_function_single_stat"
+                    _my_subclass_name = "StunDuration_scale_function"
+                    m_eSpecificStatScaleType = "ELevelUpBoons"
+                    m_flStatScale = 0.1142857
+                }
+			}
+			DazeMoveSpeed = 
+			{
+				m_strValue = "2m"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "slow"
+				m_eDisplayType = "EMaxMoveSpeed"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVE_SPEED_LIMIT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			DazeDuration = 
+			{
+				m_strValue = 2.000000
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "daze_sf"
+				}
+			}
+			Radius = 
+			{
+				m_strValue = "11m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "Radius_scale_function"
+					m_vecScalingStats = 
+					[
+						"ELevelUpBoons",
+						"ETechRange",
+					]
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_flStatScale = 0.324
+				}
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Weapon"
+		}
+		m_WeaponInfo = 
+		{
+			m_flBulletSpeed = 1600.000000
+			m_szBulletTravelTracerParticle = resource_name:"particles/upgrades/mystical_piano_projectile.vpcf"
+			m_strBulletLoopingSound = soundevent:"Mods.Mystical.Piano.Proj.Lp"
+			m_eAttachmentSourceType = "EAttachmentSource_Custom"
+			m_flVerticalAimBias = 10.000000
+			m_flBulletRadius = 1.000000
+			m_mapImpactEffects = 
+			{
+				default = 
+				{
+				}
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_multibase = 
+		[
+			"tech_upgrade_t1",
+		]
+		m_bStartTrained = true
+		m_eAbilityType = "EAbilityType_Item"
+		m_nUpgradeSlotCost = 1
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_NONE"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_PRESS"
+		m_strCastAnimGraphParam = "e_GenericThrow"
+		m_strCastAnimSequenceName = "ability_generic_cast"
+		m_strSelectionNameOverride = "item"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_flBossDamageScale = 1.000000
+		m_strAG2SourceName = "item"
+		m_eItemSlotType = "EItemSlotType_Tech"
+		m_iItemTier = "EModTier_1"
+		m_strAbilityImage = panorama:"file://{images}/upgrades/mods_tech/knockdown.psd"
+		m_strShopIconLarge = panorama:"file://{images}/items/brawl/mystical_piano.psd"
+		m_strShopIconSmall = panorama:"file://{images}/items/brawl/mystical_piano.psd"
+		m_previewParticle = resource_name:"particles/upgrades/mystical_piano_preview.vpcf"
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CIRCLE"
+		m_bShowTargetingPreviewWhileCasting = true
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_PROJECTILE | CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_PROJECTILE_FIRED_AS_BULLET | CITADEL_ABILITY_BEHAVIOR_CAN_SET_QUICK_CAST"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_vecTooltipSectionInfo = 
+		[
+			
+			{
+				m_eAbilitySectionType = "EArea_Active"
+				m_vecSectionAttributes = 
+				[
+					
+					{
+						m_strLocString = "#upgrade_mystical_piano_desc"
+						m_vecImportantAbilityProperties = 
+						[
+							
+							{
+								m_strImportantProperty = "StatusEffectStun"
+							},
+							
+							{
+								m_strImportantProperty = "StunDuration"
+							},
+							
+							{
+								m_strImportantProperty = "DazeDuration"
+							},
+						]
+						m_vecAbilityProperties = 
+						[
+							"StunDelay",
+							"Radius",
+						]
+					},
+				]
+			},
+		]
+		m_strCastSound = soundevent:"Mods.Mystical.Piano.Cast"
+		m_AOEModifier = subclass:
+		{
+			_class = "modifier_mystical_piano_aura"
+			_my_subclass_name = "modifier_mystical_piano_aura"
+			m_strParticleEffect = resource_name:"particles/upgrades/mystical_piano.vpcf"
+			m_strParticleStatusEffect = resource_name:"particles/upgrades/mystical_piano_aoe_indicator.vpcf"
+			m_HitParticle = resource_name:"particles/upgrades/mystical_piano_hit.vpcf"
+			m_sAmbientLoopingSound = soundevent:""
+			m_modifierProvidedByAura = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "modifier_mystical_piano_aura"
+				m_bIsHidden = true
+			}
+			m_StunModifier = subclass:
+			{
+				_class = "modifier_citadel_knockdown"
+				_my_subclass_name = "modifier_stun"
+				m_bIsHidden = true
+				m_sLocalizationName = "modifier_citadel_knockdown"
+			}
+			m_DazeModifier = subclass:
+			{
+				_class = "modifier_citadel_dazed"
+				_my_subclass_name = "modifier_citadel_dazed"
+				m_bIsHidden = true
+				m_strParticleEffect = resource_name:"particles/generic/generic_slow_debuff.vpcf"
+				m_sLocalizationName = "modifier_citadel_dazed"
+				m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+				[
+					"DazeMoveSpeed",
+				]
+				m_sAmbientLoopingSound = soundevent:"Mods.Mystical.Piano.Dazed.Lp"
+				m_sStartSound = soundevent:"Mods.Mystical.Piano.Dazed.Start"
+			}
+			m_sStartSound = soundevent:"Mystical.Piano.AOE.Warning"
+			m_sExpiredSound = soundevent:"Mystical.Piano.AOE.Explode"
+		}
+		m_projectileInfo = 
+		{
+			m_flSpeed = 800.000000
+			m_flUpSpeed = 100
+			m_bHideWarningParticle = 1
+		}
+		m_strSelectedSound = soundevent:"Mods.Mystical.Piano.Select"
+		m_strUnselectedSound = soundevent:"Mods.Mystical.Piano.Unselect"
+		m_strSelectedLoopSound = soundevent:"Mods.Mystical.Piano.Select.Lp"
+		m_strAG2CastCompletedAction = "throw_completed"
+		m_strAG2CastingAction = "throw"
+		m_vecAbilityUpgrades = 
+		[
+			
+			{
+				m_vecPropertyUpgrades = 
+				[
+					
+					{
+						m_strBonus = "-15"
+						m_strPropertyName = "AbilityCooldown"
+					},
+					
+					{
+						m_strPropertyName = "Radius"
+						m_strBonus = "2m"
+					},
+				]
+			},
+		]
+	}
